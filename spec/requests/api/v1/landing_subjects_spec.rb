@@ -66,7 +66,7 @@ RSpec.describe "Landing Subjects API" do
 
           it 'returns a valid 200 response' do |example|
             expect(response).to have_http_status(:ok)
-            result = JSON.parse(response.body)
+            result = response.parsed_body
             expect(result.size).to eq(2)
             expect(result['data'].size).to eq(2)
           end
@@ -103,7 +103,7 @@ RSpec.describe "Landing Subjects API" do
 
           it 'returns a valid 200 response' do |example|
             expect(response).to have_http_status(:ok)
-            result = JSON.parse(response.body)
+            result = response.parsed_body
             expect(result.size).to eq(1)
 
             result_item = result['data']
@@ -181,7 +181,7 @@ RSpec.describe "Landing Subjects API" do
 
           it 'returns a valid 200 response' do |example|
             expect(response).to have_http_status(:ok)
-            result = JSON.parse(response.body)
+            result = response.parsed_body
             expect(result.size).to eq(1)
 
             result_item = result['data']

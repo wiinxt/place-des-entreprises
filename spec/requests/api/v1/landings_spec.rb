@@ -58,7 +58,7 @@ RSpec.describe "Landings API" do
 
           it 'returns a valid 200 response' do |example|
             expect(response).to have_http_status(:ok)
-            result = JSON.parse(response.body)
+            result = response.parsed_body
             expect(result.size).to eq(2)
             expect(result['data'].size).to eq(1)
 
@@ -121,7 +121,7 @@ RSpec.describe "Landings API" do
 
           it 'returns a valid 200 response' do |example|
             expect(response).to have_http_status(:ok)
-            result = JSON.parse(response.body)
+            result = response.parsed_body
 
             result_landing = result['data']
             expect(result_landing["title"]).to eq('Page d’atterrissage 01')
@@ -198,7 +198,7 @@ RSpec.describe "Landings API" do
 
           it 'returns a valid 200 response' do |example|
             expect(response).to have_http_status(:ok)
-            result = JSON.parse(response.body)
+            result = response.parsed_body
             expect(result.size).to eq(2)
 
             result_landing = result['data']
