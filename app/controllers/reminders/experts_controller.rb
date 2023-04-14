@@ -94,7 +94,7 @@ module Reminders
 
     def render_collection(action)
       @active_experts = territory_experts
-        .includes(:reminder_feedbacks, :users, :received_needs)
+        .joins(:reminder_feedbacks, :users, :received_needs)
         .send(action)
         .most_needs_quo_first
         .page params[:page]
